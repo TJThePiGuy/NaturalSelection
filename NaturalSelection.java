@@ -8,13 +8,14 @@ public class NaturalSelection {
         int index = 0; 
 
         final int TRIALS = 10;
+        final double MUT_INCREASE = 0.005;
 
-        for(double mut = 0.01; mut <= 0.01 * results.length; mut += 0.01) {
+        for(double mut = MUT_INCREASE; mut <= MUT_INCREASE * results.length; mut += MUT_INCREASE) {
 
             for(int trial = 0; trial < TRIALS; trial++) {
 
 
-            Population population = new Population("To be or not to be.", 100, mut);
+            Population population = new Population("Hello there.", 100, mut);
 
             int i = 0;
 
@@ -37,7 +38,7 @@ public class NaturalSelection {
             index++;
         }
         for (int i = 0; i < results.length; i++) {
-            System.out.println("Mutation rate: " + 0.01 * (i + 1) + ", Generations until success: " + results[i]);
+            System.out.println("Mutation rate: " + MUT_INCREASE * (i + 1) + ", Generations until success: " + results[i]);
         }
     }   
 }
