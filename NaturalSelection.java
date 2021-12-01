@@ -7,7 +7,7 @@ public class NaturalSelection {
         double[] results = new double[5];
         int index = 0; 
 
-        final int TRIALS = 10;
+        final int TRIALS = 100;
         final double MUT_INCREASE = 0.005;
 
         for(double mut = MUT_INCREASE; mut <= MUT_INCREASE * results.length; mut += MUT_INCREASE) {
@@ -24,7 +24,7 @@ public class NaturalSelection {
                 population.calcFitness();
 
 
-                System.out.println(i + " iterations: Max Fitness: "  + population.maxFitness + ", Best String: " + population.bestStr);
+                // System.out.println(i + " iterations: Max Fitness: "  + population.maxFitness + ", Best String: " + population.bestStr);
 
                 population.getNextGeneration();
 
@@ -32,7 +32,10 @@ public class NaturalSelection {
 
                 }
                results[index] += i;
+               System.out.println("Mutation Rate " + mut + " Trial " + trial + " Done.");
             }
+
+
             results[index] = results[index] / (double) TRIALS;
             
             index++;
