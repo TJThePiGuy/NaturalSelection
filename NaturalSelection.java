@@ -4,13 +4,15 @@ public class NaturalSelection {
     
     public static void main(String[] args) {
 
-        double[] results = new double[5];
+        double[] results = new double[10];
         int index = 0; 
 
-        final int TRIALS = 100;
+        final int TRIALS = 200;
         final double MUT_INCREASE = 0.005;
 
-        for(double mut = MUT_INCREASE; mut <= MUT_INCREASE * results.length; mut += MUT_INCREASE) {
+        for(int j = 1; j <= results.length; j++) {
+
+            double mut = MUT_INCREASE * j;
 
             for(int trial = 0; trial < TRIALS; trial++) {
 
@@ -41,7 +43,7 @@ public class NaturalSelection {
             index++;
         }
         for (int i = 0; i < results.length; i++) {
-            System.out.println("Mutation rate: " + MUT_INCREASE * (i + 1) + ", Generations until success: " + results[i]);
+            System.out.println("Mutation rate: " + MUT_INCREASE * (i + 1) + ", Average number of generations until success: " + results[i]);
         }
     }   
 }
