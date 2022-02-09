@@ -4,10 +4,12 @@ public class NaturalSelection {
     
     public static void main(String[] args) {
 
-        double[] results = new double[10];
+        long firstTime = System.nanoTime();
+
+        double[] results = new double[1];
         int index = 0; 
 
-        final int TRIALS = 200;
+        final int TRIALS = 100;
         final double MUT_INCREASE = 0.005;
 
         for(int j = 1; j <= results.length; j++) {
@@ -45,5 +47,8 @@ public class NaturalSelection {
         for (int i = 0; i < results.length; i++) {
             System.out.println("Mutation rate: " + MUT_INCREASE * (i + 1) + ", Average number of generations until success: " + results[i]);
         }
+
+        long secondTime = System.nanoTime();
+        System.out.println("Total time (seconds): " + (secondTime - firstTime) / 1000000000);
     }   
 }
