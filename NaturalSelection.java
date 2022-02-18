@@ -6,10 +6,10 @@ public class NaturalSelection {
 
         long firstTime = System.nanoTime();
 
-        double[] results = new double[1];
+        double[] results = new double[10];
         int index = 0; 
 
-        final int TRIALS = 100;
+        final int TRIALS = 1000;
         final double MUT_INCREASE = 0.005;
 
         for(int j = 1; j <= results.length; j++) {
@@ -19,7 +19,7 @@ public class NaturalSelection {
             for(int trial = 0; trial < TRIALS; trial++) {
 
 
-            Population population = new Population("Hello there.", 100, mut);
+            Population population = new Population("Hello there.", 1000, mut);
 
             int i = 0;
 
